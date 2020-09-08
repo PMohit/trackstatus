@@ -2,6 +2,7 @@ import React from 'react';
 import {Card,CardContent,Typography,Grid} from '@material-ui/core'
 import styles from './Cards.module.css';
 import CountUp from 'react-countup';
+import cx from 'classnames';
 
 const Cards = ({data : {confirmed,recovered,deaths,lastUpdate}}) => {
     //console.log(props);
@@ -11,7 +12,7 @@ const Cards = ({data : {confirmed,recovered,deaths,lastUpdate}}) => {
     return(
         <div className={styles.container}>
                 <Grid container spacing={3} justify="center">
-                       <Grid item component={Card}>
+                       <Grid item component={Card} xs={12} md={3}className={cx(styles.card,styles.infected)}>
                             <CardContent>
                                 <Typography color="textSecondary" gutterBottom>Infected</Typography>
                                 <Typography varaint="h5" >
@@ -26,7 +27,7 @@ const Cards = ({data : {confirmed,recovered,deaths,lastUpdate}}) => {
                                 <Typography varaint="body2" >Number of active cases</Typography>
                             </CardContent>
                        </Grid>
-                       <Grid item component={Card}>
+                       <Grid item component={Card} xs={12} md={3}className={cx(styles.card,styles.recovered)}>
                             <CardContent>
                                 <Typography color="textSecondary" gutterBottom>Recovered</Typography>
                                 <Typography varaint="h5" >
@@ -40,7 +41,7 @@ const Cards = ({data : {confirmed,recovered,deaths,lastUpdate}}) => {
                                 <Typography varaint="body2" >Number of recovires </Typography>
                             </CardContent>
                        </Grid>
-                       <Grid item component={Card}>
+                       <Grid item component={Card} xs={12} md={3}className={cx(styles.card,styles.deaths)}>
                             <CardContent>
                                 <Typography color="textSecondary" gutterBottom>Deaths</Typography>
                                 <Typography varaint="h5" >
